@@ -1,0 +1,34 @@
+{
+  "name": "FINNBottomSheet",
+  "summary": "Custom modal presentation style for views anchored to the bottom of the screen",
+  "version": "5.1.6",
+  "authors": "FINN.no",
+  "homepage": "https://github.com/finn-no/bottom-sheet-ios",
+  "social_media_url": "https://twitter.com/FINN_tech",
+  "description": "Simple to use and customizable modal presentation style for views anchored to the bottom of the screen.",
+  "license": "MIT",
+  "platforms": {
+    "ios": "11.2"
+  },
+  "requires_arc": true,
+  "swift_versions": "5.0",
+  "source": {
+    "git": "https://github.com/finn-no/bottom-sheet-ios.git",
+    "tag": "5.1.6"
+  },
+  "cocoapods_version": ">= 1.4.0",
+  "source_files": "Sources/**/*.{h,m,swift}",
+  "resources": [
+    "Sources/**/*.lproj"
+  ],
+  "resource_bundles": {
+    "FINNBottomSheet": [
+      "Sources/**/*.lproj"
+    ]
+  },
+  "frameworks": [
+    "Foundation",
+    "UIKit"
+  ],
+  "swift_version": "5.0"
+}

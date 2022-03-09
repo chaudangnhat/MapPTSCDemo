@@ -1,0 +1,6 @@
+framework module FINNBottomSheet {
+  umbrella header "FINNBottomSheet-umbrella.h"
+
+  export *
+  module * { export * }
+}
