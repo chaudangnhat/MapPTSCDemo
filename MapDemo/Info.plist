@@ -2,14 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>ProvisionedDevices</key>
-	<array>
-		<string>501a624f8fb05597641a62d3323cc2fcb0289900</string>
-		<string>d352fca5e501b3c0adced229148bdb9b34920e31</string>
-		<string>bff53eee801c7464c0999438aa1409f0838030e2</string>
-	</array>
-    <key>CFBundleIconName</key>
-    <string>AppIcon</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -29,5 +21,12 @@
 			</array>
 		</dict>
 	</dict>
+    
+    <key>ProvisionedDevices</key>
+    <array>
+        <string>501a624f8fb05597641a62d3323cc2fcb0289900</string>
+        <string>d352fca5e501b3c0adced229148bdb9b34920e31</string>
+        <string>bff53eee801c7464c0999438aa1409f0838030e2</string>
+    </array>
 </dict>
 </plist>

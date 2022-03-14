@@ -9,17 +9,6 @@ import Foundation
 import UIKit
 import SnapKit
 
-struct PortModel{
-    var name: String = ""
-    var locationName = ""
-    var size: Double = 0.0
-    var length: Double = 0
-    var capacity: String = ""
-    
-    var lat: Double = 0
-    var long: Double = 0
-}
-
 class PortTableView: UITableView{
     
     var list: [PortModel] = []

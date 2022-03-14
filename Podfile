@@ -6,11 +6,10 @@ target 'MapDemo' do
   use_frameworks!
 
   # Pods for MapDemo
-  pod 'PanModal'
   pod "Cluster"
 pod 'SnapKit'
-pod "FINNBottomSheet", git: "https://github.com/finn-no/BottomSheet.git"
 pod 'IQKeyboardManager'
+pod 'FittedSheets'
   target 'MapDemoTests' do
     inherit! :search_paths
     # Pods for testing

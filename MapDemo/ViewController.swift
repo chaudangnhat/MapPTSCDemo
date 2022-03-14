@@ -8,9 +8,8 @@
 import UIKit
 import MapKit
 import CoreLocation
-import FINNBottomSheet
-import PanModal
 import Cluster
+import FittedSheets
 
 class ViewController: UIViewController {
 
@@ -33,8 +32,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var portTableview: PortTableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
+    var sheetController: SheetViewController?
     let regionRadius: Double = 1000
     var locationManager = CLLocationManager()
+    
     lazy var manager: ClusterManager = { [unowned self] in
         let manager = ClusterManager()
         manager.delegate = self
@@ -118,17 +119,6 @@ class ViewController: UIViewController {
     }
 }
 
-class PortAnnotation: Annotation {
-    var portModel: PortModel
-    
-    init(model: PortModel) {
-        self.portModel = model
-        super.init()
-
-//        self.title = model.name + " Port"
-        self.coordinate = CLLocationCoordinate2D(latitude: model.lat, longitude: model.long)
-    }
-}
 
 extension ViewController: MKMapViewDelegate{
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
@@ -151,29 +141,16 @@ extension ViewController: MKMapViewDelegate{
     }
     
     func mapSelectPort(portModel: PortModel){
-        let transitioningDelegate = BottomSheetTransitioningDelegate(
-            contentHeights: [.bottomSheetAutomatic, 400],
-            startTargetIndex: 1
-        )
+       
         let viewController = PortSheetViewController(model: portModel)
-        viewController.transitioningDelegate = transitioningDelegate
-        viewController.modalPresentationStyle = .custom
         
-        
-        if UIDevice.current.userInterfaceIdiom == .phone{
-            dismiss(animated: true, completion: nil)
-            presentPanModal(viewController)
-        }else{
-            self.present(viewController, animated: true, completion: {})
-
+        let sheetController = SheetViewController(controller: viewController, sizes: [.percent(0.5), .marginFromTop(100)], options: nil)
+        self.sheetController = sheetController
+        sheetController.handleScrollView(viewController.rightPortInfoTableView)
+        self.sheetController?.didDismiss = { [weak self] vc in
+            self?.sheetController?.dismiss(animated: false, completion: nil)
         }
-        
-        
-        
-//        self.present(viewController, animated: true, completion: {
-//            let coordinateRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: portModel.lat, longitude: portModel.long), latitudinalMeters: self.regionRadius, longitudinalMeters: self.regionRadius)
-//            self.map.setRegion(coordinateRegion, animated: true)
-//        })
+        self.present(sheetController, animated: true, completion: nil)
     }
     
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
@@ -181,10 +158,7 @@ extension ViewController: MKMapViewDelegate{
             print(finished)
         }
     }
-    
 }
-
-
 
 extension ViewController: UISearchBarDelegate, UITextFieldDelegate{
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
@@ -222,222 +196,6 @@ extension ViewController: UISearchBarDelegate, UITextFieldDelegate{
     @objc
     public func userClickedClearSearch(_ sender: Any) {
         self.clearSearch()
-    }
-}
-
-
-extension UIColor{
-    public class var primaryColor : UIColor {
-        return UIColor.link
-    }
-}
-
-extension UISearchBar{
-
-    func getClearSearchButton()-> UIButton?{
-        
-        guard let searchTextField = self.textField else {return nil}
-        guard let clearButton     = searchTextField.value(forKey: "_clearButton") as? UIButton else {return nil}
-        return clearButton
-    }
-    
-    public func clearSearchText(onTap: (() -> Void)?){
-        
-    }
-    
-    public func setDefaultSearchBar(){
-        self.barTintColor = UIColor.link
-        self.tintColor    = UIColor.link
-        self.cursorColor = UIColor.link
-        
-        self.textField?.textColor = UIColor.black
-        self.textField?.backgroundColor = UIColor.white
-
-        self.layer.borderWidth = 1
-        self.layer.borderColor = UIColor.link.cgColor
-        
-        self.backgroundColor = UIColor.link
-        self.placeholder = "Search"
-        self.setShowsCancelButton(true, animated: true)
-        
-        if let cancel_btn = self.cancelButton {
-            cancel_btn.setTitle("Cancel", for: .normal)
-            cancel_btn.setTitleColor(UIColor.white, for: UIControl.State.normal)
-            cancel_btn.sizeToFit()
-        }
-    }
-    
-    public var cursorColor: UIColor! {
-        set {
-            for subView in self.subviews[0].subviews where ((subView as? UITextField) != nil) {
-                subView.tintColor = newValue
-            }
-        }
-        get {
-            for subView in self.subviews[0].subviews where ((subView as? UITextField) != nil) {
-                return subView.tintColor
-            }
-            // Return default tintColor
-            return UIColor.link
-        }
-    }
-    
-    //get SearchTextField
-    public var textField: UITextField? {
-        if #available(iOS 13.0, *) {
-            return self.searchTextField
-        }
-        return self.value(forKey: "searchField") as? UITextField
-    }
-    
-    public var cancelButton: UIButton? {
-        if #available(iOS 13, *) {
-            return subviews.last?.subviews.last?.subviews.last(where: {String(describing: $0).contains("UINavigationButton")}) as? UIButton
-        } else {
-            guard let cancel_btn = self.value(forKey: "_cancelButton") as? UIButton else {return nil}
-            return cancel_btn
-        }
-    }
-}
-
-
-
-@objc open class LocationUtil: NSObject, CLLocationManagerDelegate{
-     
-     @objc public static let sharedIntance = LocationUtil()
-     var locationManager: CLLocationManager = CLLocationManager()
-     var authorizedCompletion: (() -> ()) = {}
-     
-     public func alertPromptToAllowLocationAccessViaSetting(){
-          let alert = UIAlertController(title: "Permission for your Location was denied", message: "Please enable access to your Location in the Settings app", preferredStyle: UIAlertController.Style.alert)
-        
-        alert.addAction(UIAlertAction(title: "Settings", style: .cancel) { [weak self](alert) -> Void in
-            UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options: [:],
-                                      completionHandler: {
-                                        (success) in
-                                      })
-        })
-        
-        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { [weak self](alert) in
-            self?.authorizedCompletion = {}
-            self?.locationManager.delegate = nil
-        }))
-        
-        
-          
-          if !(UIApplication.topViewController() is UIAlertController) {
-               UIApplication.topViewController().present(alert, animated: true, completion: nil)
-          }
-     }
-     
-     @objc public func checkAuthorizedLocation(authorizedCompletion: @escaping ()-> Void){
-          self.authorizedCompletion = authorizedCompletion
-          let status = CLLocationManager.authorizationStatus()
-          
-          switch status {
-          case .authorizedAlways:
-               self.authorizedCompletion()
-               self.authorizedCompletion = {}
-               locationManager.delegate = nil
-               break
-          case .authorizedWhenInUse:
-               self.authorizedCompletion()
-               self.authorizedCompletion = {}
-               locationManager.delegate = nil
-               break
-          case .denied:
-               locationManager.delegate = self
-               self.alertPromptToAllowLocationAccessViaSetting()
-               break
-          case .notDetermined:
-               locationManager.delegate = self
-               locationManager.requestAlwaysAuthorization()
-               break
-          case .restricted:
-               break
-          default:
-            break
-          }
-     }
-     
-    public func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-          switch  status{
-          case .authorizedAlways:
-               self.authorizedCompletion()
-               self.authorizedCompletion = {}
-               locationManager.delegate = nil
-               break
-          case .authorizedWhenInUse:
-               self.authorizedCompletion()
-               self.authorizedCompletion = {}
-               locationManager.delegate = nil
-               break
-          case .denied:
-               locationManager.delegate = self
-               self.alertPromptToAllowLocationAccessViaSetting()
-               break
-          case .notDetermined:
-               locationManager.delegate = self
-               locationManager.requestAlwaysAuthorization()
-               break
-          case .restricted:
-               break
-          default:
-            break
-        }
-     }
-}
-
-
-extension UIApplication {
-    
-    @objc public static func setSharedStatusBarStyle(_ style: UIStatusBarStyle = UIStatusBarStyle.default,animated:Bool = true) {
-        UIApplication.shared.setStatusBarStyle(style, animated: animated)
-    }
-    
-    @objc open class func topViewController(_ inputBase: UIViewController? = nil ) -> UIViewController {
-        var base : UIViewController? = inputBase
-        
-        if(base == nil) {
-            if let delegateWindow = UIApplication.shared.delegate?.window,let window = delegateWindow {
-                base = window.rootViewController
-            }
-            else {
-                base = UIApplication.shared.keyWindow?.rootViewController
-            }
-            
-        }
-        
-        if let nav = base as? UINavigationController {
-            return topViewController(nav.visibleViewController ?? nav.topViewController ?? nav.viewControllers.first)
-        }
-        
-        if let tab = base as? UITabBarController {
-            if let selected = tab.selectedViewController {
-                return topViewController(selected)
-            }
-        }
-        
-        if let split = base as? UISplitViewController {
-            return topViewController(split.viewControllers.first)
-        }
-        
-        if let presented = base?.presentedViewController {
-            if (presented is UINavigationController) && (presented as! UINavigationController).viewControllers.count == 0 {
-                return base!
-            }
-            return topViewController(presented)
-        }
-        
-        return base ?? UIViewController()
-    }
-    
-    @objc public static func setSharedStatusBarHidden(_ isHidden : Bool,animated:Bool = true, animationType: UIStatusBarAnimation = .fade) {
-        UIApplication.shared.setStatusBarHidden(isHidden, with: animationType)
-    }
-    
-    @objc public static func iOS_VERSION_GREATER_THAN(version: String) -> Bool {
-        return UIDevice.current.systemVersion.compare(version, options: NSString.CompareOptions.numeric) == ComparisonResult.orderedDescending
     }
 }
 

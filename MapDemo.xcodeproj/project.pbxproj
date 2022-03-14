@@ -11,6 +11,8 @@
 		81269C55450CA02C61246F71 /* Pods_MapDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7927A25949CAAA6091E05D9D /* Pods_MapDemoTests.framework */; };
 		9D196FB927C736CF001821D7 /* PortTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D196FB827C736CF001821D7 /* PortTableViewCell.swift */; };
 		9D196FBB27C736D6001821D7 /* PortTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D196FBA27C736D6001821D7 /* PortTableViewCell.xib */; };
+		9D3B101327DDDE4800477F19 /* PortServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3B101227DDDE4800477F19 /* PortServiceModel.swift */; };
+		9D3B101527DDDEDA00477F19 /* PortModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3B101427DDDEDA00477F19 /* PortModel.swift */; };
 		9D3B531827C7391400199BAB /* PortHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D3B531727C7391400199BAB /* PortHeaderView.xib */; };
 		9D3B531A27C73B0100199BAB /* PortHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3B531927C73B0100199BAB /* PortHeaderView.swift */; };
 		9D3C44F827C75082005BEE45 /* PortAnnnotationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D3C44F727C75082005BEE45 /* PortAnnnotationView.xib */; };
@@ -19,6 +21,14 @@
 		9D8C0CFF27C7793C00371CA4 /* PortSheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D8C0CFE27C7793C00371CA4 /* PortSheetViewController.xib */; };
 		9D8C0D0127C77A0900371CA4 /* PortSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8C0D0027C77A0900371CA4 /* PortSheetViewController.swift */; };
 		9D8C0D0327C77B8800371CA4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8C0D0227C77B8800371CA4 /* BaseViewController.swift */; };
+		9DCE9E9827DCDA820089C253 /* UIApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE9E9727DCDA820089C253 /* UIApplicationExtension.swift */; };
+		9DCE9E9B27DCDAAD0089C253 /* LocationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE9E9A27DCDAAD0089C253 /* LocationUtil.swift */; };
+		9DCE9E9D27DCDAD60089C253 /* UISearchBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE9E9C27DCDAD60089C253 /* UISearchBarExtension.swift */; };
+		9DCE9E9F27DCDAEC0089C253 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE9E9E27DCDAEC0089C253 /* UIColorExtension.swift */; };
+		9DCE9EA227DCDB090089C253 /* PortAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE9EA127DCDB090089C253 /* PortAnnotation.swift */; };
+		9DCE9EA527DCDE090089C253 /* PortDetailTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE9EA427DCDE090089C253 /* PortDetailTableView.swift */; };
+		9DCE9EA727DCE33D0089C253 /* PortDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DCE9EA627DCE33D0089C253 /* PortDetailTableViewCell.xib */; };
+		9DCE9EAB27DCE48D0089C253 /* PortDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE9EAA27DCE48D0089C253 /* PortDetailTableViewCell.swift */; };
 		9DD95FE327C6628A00B7709F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD95FE227C6628A00B7709F /* AppDelegate.swift */; };
 		9DD95FE527C6628A00B7709F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD95FE427C6628A00B7709F /* SceneDelegate.swift */; };
 		9DD95FE727C6628A00B7709F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DD95FE627C6628A00B7709F /* ViewController.swift */; };
@@ -54,6 +64,8 @@
 		854D575B66465580BF0F404A /* Pods-MapDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapDemo.debug.xcconfig"; path = "Target Support Files/Pods-MapDemo/Pods-MapDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		9D196FB827C736CF001821D7 /* PortTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortTableViewCell.swift; sourceTree = "<group>"; };
 		9D196FBA27C736D6001821D7 /* PortTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PortTableViewCell.xib; sourceTree = "<group>"; };
+		9D3B101227DDDE4800477F19 /* PortServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortServiceModel.swift; sourceTree = "<group>"; };
+		9D3B101427DDDEDA00477F19 /* PortModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortModel.swift; sourceTree = "<group>"; };
 		9D3B531727C7391400199BAB /* PortHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PortHeaderView.xib; sourceTree = "<group>"; };
 		9D3B531927C73B0100199BAB /* PortHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortHeaderView.swift; sourceTree = "<group>"; };
 		9D3C44F727C75082005BEE45 /* PortAnnnotationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PortAnnnotationView.xib; sourceTree = "<group>"; };
@@ -62,6 +74,14 @@
 		9D8C0CFE27C7793C00371CA4 /* PortSheetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PortSheetViewController.xib; sourceTree = "<group>"; };
 		9D8C0D0027C77A0900371CA4 /* PortSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortSheetViewController.swift; sourceTree = "<group>"; };
 		9D8C0D0227C77B8800371CA4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		9DCE9E9727DCDA820089C253 /* UIApplicationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtension.swift; sourceTree = "<group>"; };
+		9DCE9E9A27DCDAAD0089C253 /* LocationUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationUtil.swift; sourceTree = "<group>"; };
+		9DCE9E9C27DCDAD60089C253 /* UISearchBarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBarExtension.swift; sourceTree = "<group>"; };
+		9DCE9E9E27DCDAEC0089C253 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		9DCE9EA127DCDB090089C253 /* PortAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortAnnotation.swift; sourceTree = "<group>"; };
+		9DCE9EA427DCDE090089C253 /* PortDetailTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortDetailTableView.swift; sourceTree = "<group>"; };
+		9DCE9EA627DCE33D0089C253 /* PortDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PortDetailTableViewCell.xib; sourceTree = "<group>"; };
+		9DCE9EAA27DCE48D0089C253 /* PortDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortDetailTableViewCell.swift; sourceTree = "<group>"; };
 		9DD95FDF27C6628A00B7709F /* MapDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DD95FE227C6628A00B7709F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DD95FE427C6628A00B7709F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -153,8 +173,55 @@
 			children = (
 				9D8C0CFE27C7793C00371CA4 /* PortSheetViewController.xib */,
 				9D8C0D0027C77A0900371CA4 /* PortSheetViewController.swift */,
+				9DCE9EA827DCE4670089C253 /* Screen */,
+				9DCE9EA927DCE46D0089C253 /* Cell */,
 			);
 			path = PortDetailScreen;
+			sourceTree = "<group>";
+		};
+		9DCE9E9627DCDA630089C253 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9DCE9E9727DCDA820089C253 /* UIApplicationExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9DCE9E9927DCDA9E0089C253 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				9DCE9E9A27DCDAAD0089C253 /* LocationUtil.swift */,
+				9DCE9E9C27DCDAD60089C253 /* UISearchBarExtension.swift */,
+				9DCE9E9E27DCDAEC0089C253 /* UIColorExtension.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		9DCE9EA027DCDAFF0089C253 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9DCE9EA127DCDB090089C253 /* PortAnnotation.swift */,
+				9D3B101227DDDE4800477F19 /* PortServiceModel.swift */,
+				9D3B101427DDDEDA00477F19 /* PortModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9DCE9EA827DCE4670089C253 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				9DCE9EA427DCDE090089C253 /* PortDetailTableView.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		9DCE9EA927DCE46D0089C253 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				9DCE9EA627DCE33D0089C253 /* PortDetailTableViewCell.xib */,
+				9DCE9EAA27DCE48D0089C253 /* PortDetailTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		9DD95FD627C6628A00B7709F = {
@@ -182,6 +249,9 @@
 		9DD95FE127C6628A00B7709F /* MapDemo */ = {
 			isa = PBXGroup;
 			children = (
+				9DCE9EA027DCDAFF0089C253 /* Model */,
+				9DCE9E9927DCDA9E0089C253 /* Util */,
+				9DCE9E9627DCDA630089C253 /* Extensions */,
 				9D533F0E27C72C0000CC1AA5 /* Screen */,
 				9DD95FE227C6628A00B7709F /* AppDelegate.swift */,
 				9DD95FE427C6628A00B7709F /* SceneDelegate.swift */,
@@ -337,6 +407,7 @@
 				9D3C44F827C75082005BEE45 /* PortAnnnotationView.xib in Resources */,
 				9D196FBB27C736D6001821D7 /* PortTableViewCell.xib in Resources */,
 				9DD95FEA27C6628A00B7709F /* Main.storyboard in Resources */,
+				9DCE9EA727DCE33D0089C253 /* PortDetailTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,13 +537,22 @@
 			files = (
 				9D533F1027C7304000CC1AA5 /* PortTableView.swift in Sources */,
 				9DD95FE727C6628A00B7709F /* ViewController.swift in Sources */,
+				9DCE9E9B27DCDAAD0089C253 /* LocationUtil.swift in Sources */,
+				9DCE9EA227DCDB090089C253 /* PortAnnotation.swift in Sources */,
+				9DCE9E9827DCDA820089C253 /* UIApplicationExtension.swift in Sources */,
 				9DD95FE327C6628A00B7709F /* AppDelegate.swift in Sources */,
 				9D196FB927C736CF001821D7 /* PortTableViewCell.swift in Sources */,
+				9DCE9E9F27DCDAEC0089C253 /* UIColorExtension.swift in Sources */,
 				9D3B531A27C73B0100199BAB /* PortHeaderView.swift in Sources */,
+				9DCE9E9D27DCDAD60089C253 /* UISearchBarExtension.swift in Sources */,
 				9D8C0D0327C77B8800371CA4 /* BaseViewController.swift in Sources */,
 				9D8C0D0127C77A0900371CA4 /* PortSheetViewController.swift in Sources */,
 				9D3C44FA27C750F8005BEE45 /* PortAnnotationView.swift in Sources */,
+				9DCE9EA527DCDE090089C253 /* PortDetailTableView.swift in Sources */,
+				9D3B101527DDDEDA00477F19 /* PortModel.swift in Sources */,
+				9D3B101327DDDE4800477F19 /* PortServiceModel.swift in Sources */,
 				9DD95FE527C6628A00B7709F /* SceneDelegate.swift in Sources */,
+				9DCE9EAB27DCE48D0089C253 /* PortDetailTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -651,13 +731,11 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8UF87JS6WW;
+				DEVELOPMENT_TEAM = C253N945M7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MapDemo/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = PTSC;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Your location is used to provide data for tracking and metering distance in geoshape and geotrace widgets.";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Your location is used to provide data for tracking and metering distance in geoshape and geotrace widgets.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Your location is used to provide data for tracking and metering distance in geoshape and geotrace widgets.";
@@ -666,15 +744,14 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = map.ptsc.vn;
+				PRODUCT_BUNDLE_IDENTIFIER = mapdemo.vn.7979797979;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Map Stagging";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -688,13 +765,11 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8UF87JS6WW;
+				DEVELOPMENT_TEAM = C253N945M7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MapDemo/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = PTSC;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Your location is used to provide data for tracking and metering distance in geoshape and geotrace widgets.";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Your location is used to provide data for tracking and metering distance in geoshape and geotrace widgets.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Your location is used to provide data for tracking and metering distance in geoshape and geotrace widgets.";
@@ -703,15 +778,14 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = map.ptsc.vn;
+				PRODUCT_BUNDLE_IDENTIFIER = mapdemo.vn.7979797979;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Map Stagging";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
