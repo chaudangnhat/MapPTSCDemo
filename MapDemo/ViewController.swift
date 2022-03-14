@@ -54,6 +54,8 @@ class ViewController: UIViewController {
                              PortModel(name: "Sao Mai Ben Dinh", locationName: "Ba Ria Vung Tau", size: 15, length: 150, capacity: "20.000", lat: 10.4, long: 108.0765028),
                              PortModel(name: "PTSC Supply Base", locationName: "Ba Ria Vung Tau", size: 82.2, length: 733.12, capacity: "10.000", lat: 10.384140, long: 107.094180),
                              PortModel(name: "Phu My", locationName: "Ba Ria Vung Tau", size: 26.49, length: 150, capacity: "80.000", lat: 10.588560, long: 107.047330),
+                             PortModel(name: "Bể trầm tích Cửu Long", locationName: "Ba Ria Vung Tau", size: 26.49, length: 150, capacity: "80.000", lat: 9.699477030590371, long: 108.60610041209111, type: .BeTramTichCuuLong)
+                             
     ]
 
     
@@ -141,9 +143,20 @@ extension ViewController: MKMapViewDelegate{
     }
     
     func mapSelectPort(portModel: PortModel){
+        
+        if portModel.type == .unknow{
+            let viewController = PortSheetBasicViewController(model: portModel)
+            
+            let sheetController = SheetViewController(controller: viewController, sizes: [.percent(0.4), .intrinsic], options: nil)
+            self.sheetController = sheetController
+            self.sheetController?.didDismiss = { [weak self] vc in
+                self?.sheetController?.dismiss(animated: false, completion: nil)
+            }
+            self.present(sheetController, animated: true, completion: nil)
+            return
+        }
        
         let viewController = PortSheetViewController(model: portModel)
-        
         let sheetController = SheetViewController(controller: viewController, sizes: [.percent(0.5), .marginFromTop(100)], options: nil)
         self.sheetController = sheetController
         sheetController.handleScrollView(viewController.rightPortInfoTableView)

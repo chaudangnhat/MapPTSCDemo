@@ -7,7 +7,14 @@
 
 import Foundation
 
+enum PortType: String{
+    case BeTramTichCuuLong
+    case unknow
+}
+
 class PortModel{
+    
+    var type: PortType = .unknow
     var image: String? = nil
     var info: String? = nil
     
@@ -28,7 +35,7 @@ class PortModel{
         
     }
     
-    init(name: String, locationName: String, size: Double, length: Double, capacity: String, lat: Double, long: Double){
+    init(name: String, locationName: String, size: Double, length: Double, capacity: String, lat: Double, long: Double,type: PortType = .unknow){
         self.name = name
         self.locationName = locationName
         self.size = size
@@ -36,5 +43,6 @@ class PortModel{
         self.capacity = capacity
         self.lat = lat
         self.long = long
+        self.type = type
     }
 }

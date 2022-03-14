@@ -11,6 +11,8 @@
 		81269C55450CA02C61246F71 /* Pods_MapDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7927A25949CAAA6091E05D9D /* Pods_MapDemoTests.framework */; };
 		9D196FB927C736CF001821D7 /* PortTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D196FB827C736CF001821D7 /* PortTableViewCell.swift */; };
 		9D196FBB27C736D6001821D7 /* PortTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D196FBA27C736D6001821D7 /* PortTableViewCell.xib */; };
+		9D2D1B2627DF1D1100878CAC /* PortSheetBasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2D1B2527DF1D1000878CAC /* PortSheetBasicViewController.swift */; };
+		9D2D1B2827DF1D4300878CAC /* PortSheetBasicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D2D1B2727DF1D4300878CAC /* PortSheetBasicViewController.xib */; };
 		9D3B101327DDDE4800477F19 /* PortServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3B101227DDDE4800477F19 /* PortServiceModel.swift */; };
 		9D3B101527DDDEDA00477F19 /* PortModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3B101427DDDEDA00477F19 /* PortModel.swift */; };
 		9D3B531827C7391400199BAB /* PortHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D3B531727C7391400199BAB /* PortHeaderView.xib */; };
@@ -64,6 +66,8 @@
 		854D575B66465580BF0F404A /* Pods-MapDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapDemo.debug.xcconfig"; path = "Target Support Files/Pods-MapDemo/Pods-MapDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		9D196FB827C736CF001821D7 /* PortTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortTableViewCell.swift; sourceTree = "<group>"; };
 		9D196FBA27C736D6001821D7 /* PortTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PortTableViewCell.xib; sourceTree = "<group>"; };
+		9D2D1B2527DF1D1000878CAC /* PortSheetBasicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortSheetBasicViewController.swift; sourceTree = "<group>"; };
+		9D2D1B2727DF1D4300878CAC /* PortSheetBasicViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PortSheetBasicViewController.xib; sourceTree = "<group>"; };
 		9D3B101227DDDE4800477F19 /* PortServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortServiceModel.swift; sourceTree = "<group>"; };
 		9D3B101427DDDEDA00477F19 /* PortModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortModel.swift; sourceTree = "<group>"; };
 		9D3B531727C7391400199BAB /* PortHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PortHeaderView.xib; sourceTree = "<group>"; };
@@ -171,6 +175,8 @@
 		9D8C0CFB27C7791200371CA4 /* PortDetailScreen */ = {
 			isa = PBXGroup;
 			children = (
+				9D2D1B2727DF1D4300878CAC /* PortSheetBasicViewController.xib */,
+				9D2D1B2527DF1D1000878CAC /* PortSheetBasicViewController.swift */,
 				9D8C0CFE27C7793C00371CA4 /* PortSheetViewController.xib */,
 				9D8C0D0027C77A0900371CA4 /* PortSheetViewController.swift */,
 				9DCE9EA827DCE4670089C253 /* Screen */,
@@ -401,6 +407,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DD95FEF27C6628B00B7709F /* LaunchScreen.storyboard in Resources */,
+				9D2D1B2827DF1D4300878CAC /* PortSheetBasicViewController.xib in Resources */,
 				9D8C0CFF27C7793C00371CA4 /* PortSheetViewController.xib in Resources */,
 				9DD95FEC27C6628B00B7709F /* Assets.xcassets in Resources */,
 				9D3B531827C7391400199BAB /* PortHeaderView.xib in Resources */,
@@ -547,6 +554,7 @@
 				9DCE9E9D27DCDAD60089C253 /* UISearchBarExtension.swift in Sources */,
 				9D8C0D0327C77B8800371CA4 /* BaseViewController.swift in Sources */,
 				9D8C0D0127C77A0900371CA4 /* PortSheetViewController.swift in Sources */,
+				9D2D1B2627DF1D1100878CAC /* PortSheetBasicViewController.swift in Sources */,
 				9D3C44FA27C750F8005BEE45 /* PortAnnotationView.swift in Sources */,
 				9DCE9EA527DCDE090089C253 /* PortDetailTableView.swift in Sources */,
 				9D3B101527DDDEDA00477F19 /* PortModel.swift in Sources */,

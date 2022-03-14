@@ -18,7 +18,7 @@ class PortDetailTableViewCell: UITableViewCell{
     
     func configCell(model: PortService){
         let image = UIImage(named: model.image)
-        let imageHeight = image?.size.height ?? 100
+        let imageHeight = (image?.size.height ?? 100) / 2
         
         self.infoImageView.image = image
         self.heightImageCT.constant = imageHeight
