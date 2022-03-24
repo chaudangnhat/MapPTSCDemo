@@ -20,6 +20,8 @@
 		9D3C44F827C75082005BEE45 /* PortAnnnotationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D3C44F727C75082005BEE45 /* PortAnnnotationView.xib */; };
 		9D3C44FA27C750F8005BEE45 /* PortAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3C44F927C750F8005BEE45 /* PortAnnotationView.swift */; };
 		9D533F1027C7304000CC1AA5 /* PortTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D533F0F27C7304000CC1AA5 /* PortTableView.swift */; };
+		9D8512B527E8D19F009885D6 /* PortHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D8512B427E8D19F009885D6 /* PortHeaderTableViewCell.xib */; };
+		9D8512B727E8D5A7009885D6 /* PortHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8512B627E8D5A7009885D6 /* PortHeaderTableViewCell.swift */; };
 		9D8C0CFF27C7793C00371CA4 /* PortSheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D8C0CFE27C7793C00371CA4 /* PortSheetViewController.xib */; };
 		9D8C0D0127C77A0900371CA4 /* PortSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8C0D0027C77A0900371CA4 /* PortSheetViewController.swift */; };
 		9D8C0D0327C77B8800371CA4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8C0D0227C77B8800371CA4 /* BaseViewController.swift */; };
@@ -75,6 +77,8 @@
 		9D3C44F727C75082005BEE45 /* PortAnnnotationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PortAnnnotationView.xib; sourceTree = "<group>"; };
 		9D3C44F927C750F8005BEE45 /* PortAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortAnnotationView.swift; sourceTree = "<group>"; };
 		9D533F0F27C7304000CC1AA5 /* PortTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortTableView.swift; sourceTree = "<group>"; };
+		9D8512B427E8D19F009885D6 /* PortHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PortHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		9D8512B627E8D5A7009885D6 /* PortHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		9D8C0CFE27C7793C00371CA4 /* PortSheetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PortSheetViewController.xib; sourceTree = "<group>"; };
 		9D8C0D0027C77A0900371CA4 /* PortSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortSheetViewController.swift; sourceTree = "<group>"; };
 		9D8C0D0227C77B8800371CA4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -226,6 +230,8 @@
 			children = (
 				9DCE9EA627DCE33D0089C253 /* PortDetailTableViewCell.xib */,
 				9DCE9EAA27DCE48D0089C253 /* PortDetailTableViewCell.swift */,
+				9D8512B427E8D19F009885D6 /* PortHeaderTableViewCell.xib */,
+				9D8512B627E8D5A7009885D6 /* PortHeaderTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -415,6 +421,7 @@
 				9D196FBB27C736D6001821D7 /* PortTableViewCell.xib in Resources */,
 				9DD95FEA27C6628A00B7709F /* Main.storyboard in Resources */,
 				9DCE9EA727DCE33D0089C253 /* PortDetailTableViewCell.xib in Resources */,
+				9D8512B527E8D19F009885D6 /* PortHeaderTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -555,6 +562,7 @@
 				9D8C0D0327C77B8800371CA4 /* BaseViewController.swift in Sources */,
 				9D8C0D0127C77A0900371CA4 /* PortSheetViewController.swift in Sources */,
 				9D2D1B2627DF1D1100878CAC /* PortSheetBasicViewController.swift in Sources */,
+				9D8512B727E8D5A7009885D6 /* PortHeaderTableViewCell.swift in Sources */,
 				9D3C44FA27C750F8005BEE45 /* PortAnnotationView.swift in Sources */,
 				9DCE9EA527DCDE090089C253 /* PortDetailTableView.swift in Sources */,
 				9D3B101527DDDEDA00477F19 /* PortModel.swift in Sources */,
