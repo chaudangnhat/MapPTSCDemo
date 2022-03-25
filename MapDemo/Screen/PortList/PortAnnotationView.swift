@@ -29,7 +29,7 @@ class PortAnnotationView: MKAnnotationView {
    }
     
     private func setup(title: String){
-        self.iconImageView.image = UIImage(named: "logo")
+        self.iconImageView.image = UIImage(named: self.portModel.type == .BeTramTichCuuLong ? "ic_port" : "logo")
         self.addSubview(self.iconImageView)
         self.iconImageView.snp.makeConstraints({
             $0.leading.equalToSuperview()

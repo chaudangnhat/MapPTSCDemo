@@ -17,7 +17,7 @@ class PortSheetViewController: BaseViewController{
     var rightData: [PortModel] = []
     
     // MARK: - View lifecycle
-    init(model: PortModel) {
+    init(model: PortModel, data: [[PortBase]]) {
         self.model = model
         super.init(nibName: nil, bundle: nil)
     }
@@ -32,10 +32,6 @@ class PortSheetViewController: BaseViewController{
     }
     
     func config(){
-//        self.configLeftTableView()
-//        self.configRightTableView()
-        
-        
         let data: [[PortBase]] = [[PortArea(portName: "Lô dầu khí 01.97 & 02.97", custommer: "PVN")],
                                    
                                    [PortService(image: "ptsc2", info: "1. Dàn đầu giếng (WHP) Thăng Long và Đông Đô"),

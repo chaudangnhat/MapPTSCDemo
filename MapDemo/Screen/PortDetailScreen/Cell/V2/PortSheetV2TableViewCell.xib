@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PortSheetV2TableViewCell" rowHeight="137" id="Eoz-Vj-VEG" customClass="PortSheetV2TableViewCell" customModule="MapDemo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="744" height="137"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Eoz-Vj-VEG" id="HEJ-0d-C5Q">
+                <rect key="frame" x="0.0" y="0.0" width="744" height="137"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ptsc" translatesAutoresizingMaskIntoConstraints="NO" id="5QD-RD-IGi">
+                        <rect key="frame" x="20" y="20" width="70" height="70"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="70" id="bc3-k1-VBQ"/>
+                            <constraint firstAttribute="width" constant="70" id="qzA-kQ-e6i"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQK-rn-gbh">
+                        <rect key="frame" x="110" y="20" width="614" height="109"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="5QD-RD-IGi" secondAttribute="bottom" constant="24" id="86l-ON-vhE"/>
+                    <constraint firstItem="aQK-rn-gbh" firstAttribute="top" secondItem="HEJ-0d-C5Q" secondAttribute="top" constant="20" id="EEd-aL-D1I"/>
+                    <constraint firstAttribute="trailing" secondItem="aQK-rn-gbh" secondAttribute="trailing" constant="20" id="Ks6-Qt-zcP"/>
+                    <constraint firstItem="5QD-RD-IGi" firstAttribute="leading" secondItem="HEJ-0d-C5Q" secondAttribute="leading" constant="20" id="MB4-GF-goT"/>
+                    <constraint firstAttribute="bottom" secondItem="aQK-rn-gbh" secondAttribute="bottom" constant="8" id="N8u-dD-APs"/>
+                    <constraint firstItem="5QD-RD-IGi" firstAttribute="top" secondItem="HEJ-0d-C5Q" secondAttribute="top" constant="20" id="rJ7-6g-3x4"/>
+                    <constraint firstItem="aQK-rn-gbh" firstAttribute="leading" secondItem="5QD-RD-IGi" secondAttribute="trailing" constant="20" id="wC6-v7-GlD"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="86l-ON-vhE"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="imageView" destination="5QD-RD-IGi" id="fy9-6e-VW3"/>
+                <outlet property="leftImageView" destination="5QD-RD-IGi" id="aBh-Vk-emh"/>
+                <outlet property="titleLb" destination="aQK-rn-gbh" id="cJq-b0-kMo"/>
+            </connections>
+            <point key="canvasLocation" x="349.27536231884062" y="4.3526785714285712"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ptsc" width="340" height="255"/>
+    </resources>
+</document>

@@ -46,7 +46,7 @@ extension PortDetailTableView: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if section == 1{
+        if data[section].first is PortService{
             let sectionView = UIView()
             sectionView.backgroundColor = UIColor.clear
             sectionView.frame = CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 30)
@@ -79,7 +79,7 @@ extension PortDetailTableView: UITableViewDelegate, UITableViewDataSource{
         
         let item = self.data[indexPath.section][indexPath.row]
         
-        if let portArea = item as? PortArea{
+        if item is PortArea{
             guard let cell = tableView.dequeueReusableCell(withIdentifier: PortHeaderTableViewCell.IDENTIFIER, for: indexPath) as? PortHeaderTableViewCell else {
                 return UITableViewCell()
             }
@@ -110,7 +110,8 @@ extension PortDetailTableView: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return section == 0 ? 0 : 30
+        let isPortServicePart = self.data[section].first is PortService
+        return !isPortServicePart ? 0 : 30
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

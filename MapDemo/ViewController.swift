@@ -50,13 +50,23 @@ class ViewController: UIViewController {
                              PortModel(name: "Nghi Son", locationName: "Thanh Hoa", size: 9.95, length: 165, capacity: "20.000-50.000", lat: 19.806692, long: 105.785179),
                              PortModel(name: "Hoa La", locationName: "Quang Binh", size: 11.02, length: 215, capacity: "10.000", lat: 17.545189, long: 106.642105),
                              PortModel(name: "Son Tra", locationName: "Da Nang", size: 10, length: 210, capacity: "3.000", lat: 16.054407, long: 108.202164),
-                             PortModel(name: "Dung Quat", locationName: "Quang Ngai", size: 13.72, length: 165, capacity: "70.000", lat: 15.122330, long: 108.799362),
-                             PortModel(name: "Sao Mai Ben Dinh", locationName: "Ba Ria Vung Tau", size: 15, length: 150, capacity: "20.000", lat: 10.4, long: 108.0765028),
+                             PortModel(name: "Dung Quat", locationName: "Quang Ngai", size: 13.72, length: 165, capacity: "70.000", lat: 15.122330, long: 108.799362, type: .DungQuat),
+                             PortModel(name: "Sao Mai Ben Dinh", locationName: "Ba Ria Vung Tau", size: 15, length: 150, capacity: "20.000", lat: 10.4, long: 108.0765028,type: .SaoMaiBenDinhPort),
                              PortModel(name: "PTSC Supply Base", locationName: "Ba Ria Vung Tau", size: 82.2, length: 733.12, capacity: "10.000", lat: 10.384140, long: 107.094180),
                              PortModel(name: "Phu My", locationName: "Ba Ria Vung Tau", size: 26.49, length: 150, capacity: "80.000", lat: 10.588560, long: 107.047330),
                              PortModel(name: "Bể trầm tích Cửu Long", locationName: "Ba Ria Vung Tau", size: 26.49, length: 150, capacity: "80.000", lat: 9.699477030590371, long: 108.60610041209111, type: .BeTramTichCuuLong)
                              
     ]
+    
+    let portData: [[PortBase]] = [[PortArea(portName: "Lô dầu khí 01.97 & 02.97", custommer: "PVN")],
+                               
+                               [PortService(image: "ptsc2", info: "1. Dàn đầu giếng (WHP) Thăng Long và Đông Đô"),
+                               PortService(image: "ptsc3", info: "2. Cung cấp, vận hành, bảo dưỡng FPSO PTSC Lam Sơn"),
+                                PortService(image: "ptsc4", info: "3. Khảo sát địa chất, khảo sát các công trình tịa mỏ"),
+                                PortService(image: "ptsc5", info: "4. Tàu trực mỏ, tàu bảo vệ mỏ"),
+                                PortService(image: "ptsc6", info: "5. Lắp đặt và bảo dưỡng các công trình tại mỏ"),
+                                PortService(image: "ptsc7", info: "6. Dịch vụ căn cứ cảng dầu khí")]]
+
 
     
     override func viewDidLoad() {
@@ -143,8 +153,33 @@ extension ViewController: MKMapViewDelegate{
     }
     
     func mapSelectPort(portModel: PortModel){
-        
-        if portModel.type == .unknow{
+        switch portModel.type {
+        case .DungQuat:
+            
+            let viewController = PortSheetV2ViewController(data: self.portData.last ?? [])
+            let sheetController = SheetViewController(controller: viewController, sizes: [.percent(0.6), .intrinsic], options: nil)
+            self.present(sheetController, animated: true, completion: nil)
+            
+            viewController.selectPortService = {[weak self] _portService in
+                let portServiceListController = PortServiceListController(data: self?.portData.last ?? [])
+                let nextSheetController = SheetViewController(controller: portServiceListController, sizes: [.percent(0.6), .marginFromTop(100)], options: nil)
+                nextSheetController.handleScrollView(portServiceListController.portDetailTableView)
+
+                sheetController.dismiss(animated: true) {
+                    self?.present(nextSheetController, animated: true, completion: nil)
+                }
+            }
+            break;
+        case .BeTramTichCuuLong:
+            let viewController = PortSheetViewController(model: portModel, data: self.portData)
+            let sheetController = SheetViewController(controller: viewController, sizes: [.percent(0.5), .marginFromTop(100)], options: nil)
+            self.sheetController = sheetController
+            sheetController.handleScrollView(viewController.portInfoTableView)
+            self.sheetController?.didDismiss = { [weak self] vc in
+                self?.sheetController?.dismiss(animated: false, completion: nil)
+            }
+            self.present(sheetController, animated: true, completion: nil)
+        default:
             let viewController = PortSheetBasicViewController(model: portModel)
             
             let sheetController = SheetViewController(controller: viewController, sizes: [.percent(0.4), .intrinsic], options: nil)
@@ -153,17 +188,7 @@ extension ViewController: MKMapViewDelegate{
                 self?.sheetController?.dismiss(animated: false, completion: nil)
             }
             self.present(sheetController, animated: true, completion: nil)
-            return
         }
-       
-        let viewController = PortSheetViewController(model: portModel)
-        let sheetController = SheetViewController(controller: viewController, sizes: [.percent(0.5), .marginFromTop(100)], options: nil)
-        self.sheetController = sheetController
-        sheetController.handleScrollView(viewController.portInfoTableView)
-        self.sheetController?.didDismiss = { [weak self] vc in
-            self?.sheetController?.dismiss(animated: false, completion: nil)
-        }
-        self.present(sheetController, animated: true, completion: nil)
     }
     
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
@@ -171,6 +196,8 @@ extension ViewController: MKMapViewDelegate{
             print(finished)
         }
     }
+    
+    
 }
 
 extension ViewController: UISearchBarDelegate, UITextFieldDelegate{
