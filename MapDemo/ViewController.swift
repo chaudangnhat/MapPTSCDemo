@@ -46,15 +46,15 @@ class ViewController: UIViewController {
     }()
     
     
-    var list: [PortModel] = [PortModel(name: "Dinh Vu", locationName: "Hai Phong", size: 15.3, length: 250, capacity: "20.000", lat: 20.705060, long: 106.795836),
-                             PortModel(name: "Nghi Son", locationName: "Thanh Hoa", size: 9.95, length: 165, capacity: "20.000-50.000", lat: 19.806692, long: 105.785179),
-                             PortModel(name: "Hoa La", locationName: "Quang Binh", size: 11.02, length: 215, capacity: "10.000", lat: 17.545189, long: 106.642105),
-                             PortModel(name: "Son Tra", locationName: "Da Nang", size: 10, length: 210, capacity: "3.000", lat: 16.054407, long: 108.202164),
-                             PortModel(name: "Dung Quat", locationName: "Quang Ngai", size: 13.72, length: 165, capacity: "70.000", lat: 15.122330, long: 108.799362),
-                             PortModel(name: "Sao Mai Ben Dinh", locationName: "Ba Ria Vung Tau", size: 15, length: 150, capacity: "20.000", lat: 10.4, long: 108.0765028),
-                             PortModel(name: "PTSC Supply Base", locationName: "Ba Ria Vung Tau", size: 82.2, length: 733.12, capacity: "10.000", lat: 10.384140, long: 107.094180),
-                             PortModel(name: "Phu My", locationName: "Ba Ria Vung Tau", size: 26.49, length: 150, capacity: "80.000", lat: 10.588560, long: 107.047330),
-                             PortModel(name: "Bể trầm tích Cửu Long", locationName: "Ba Ria Vung Tau", size: 26.49, length: 150, capacity: "80.000", lat: 9.699477030590371, long: 108.60610041209111, type: .BeTramTichCuuLong)
+    var list: [PortModel] = [PortModel(name: "Dinh Vu", locationName: "Hai Phong", size: 15.3, length: 250, capacity: "20.000", lat: 20.818670, long: 106.810503), //20.81867049389915, 106.8105037781829
+                             PortModel(name: "Nghi Son", locationName: "Thanh Hoa", size: 9.95, length: 165, capacity: "20.000-50.000", lat: 19.309601, long: 105.820213), //19.309601188633742, 105.82021368766398
+                             PortModel(name: "Hon La", locationName: "Quang Binh", size: 11.02, length: 215, capacity: "10.000", lat: 17.929660, long: 106.500005), //17.929660874932118, 106.50000572810103
+                             PortModel(name: "Son Tra", locationName: "Da Nang", size: 10, length: 210, capacity: "3.000", lat: 16.083344, long: 108.221817), //16.08334476711069, 108.22181779924702
+                             PortModel(name: "Dung Quat", locationName: "Quang Ngai", size: 13.72, length: 165, capacity: "70.000", lat: 15.145452, long: 108.797640), //15.1454527203998, 108.79764077463726
+                             PortModel(name: "Sao Mai Ben Dinh", locationName: "Ba Ria Vung Tau", size: 15, length: 150, capacity: "20.000", lat: 10.384196761115378, long: 107.0941748415363), //10.384196761115378, 107.0941748415363 Số 65A3, Đường 30/4, Phường Thắng Nhất, Thành phố Vũng Tàu
+                             PortModel(name: "PTSC Supply Base", locationName: "Ba Ria Vung Tau", size: 82.2, length: 733.12, capacity: "10.000", lat: 10.383698942680002, long: 107.09413089920776), //10.383698942680002, 107.09413089920776
+                             PortModel(name: "Phu My", locationName: "Ba Ria Vung Tau", size: 26.49, length: 150, capacity: "80.000", lat: 10.59077015398646, long: 107.05455175771709), //10.59077015398646, 107.05455175771709
+                             PortModel(name: "Lô 01.97, 02.97 ", locationName: "Ba Ria Vung Tau", size: 26.49, length: 150, capacity: "80.000", lat: 9.699477030590371, long: 108.60610041209111, type: .BeTramTichCuuLong)
                              
     ]
 
