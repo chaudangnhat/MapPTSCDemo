@@ -9,6 +9,8 @@ import Foundation
 
 enum PortType: String{
     case BeTramTichCuuLong
+    case SaoMaiBenDinhPort
+    case DungQuat
     case unknow
 }
 
